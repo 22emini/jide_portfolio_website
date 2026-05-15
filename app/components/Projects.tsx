@@ -22,7 +22,7 @@ const projects = [
     github: "https://github.com/22emini",
   },
   {
-    title: "Afraicahup E-Commerce Platform",
+    title: "Afriquehub E-Commerce Platform",
     icon: <ShoppingCart size={24} />, 
     tech: ["React", "Next.js", "Node.js", "MongoDB", "Stripe"],
     description: "Full-featured e-commerce website with product catalog, shopping cart, checkout integration via Stripe, user authentication, and admin dashboard. Supports internationalization and SEO optimization.",
@@ -63,7 +63,7 @@ const projects = [
     gradient: "from-amber-500/20 to-orange-500/20",
     accentColor: "#f59e0b",
     live: "https://v24u.com/",
-    github: "https://github.com/rolaay/v24u-web",
+    github: "https://github.com/22emini/v24u-web",
   },
 ];
 
