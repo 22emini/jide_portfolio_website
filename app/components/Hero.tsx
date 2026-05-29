@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Mail, ArrowDown, Download } from "lucide-react";
 
@@ -78,7 +79,8 @@ export default function Hero() {
         />
       ))}
 
-      <div className="relative z-10 text-center max-w-4xl mx-auto">
+      <div className="relative z-10 w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 lg:gap-16 items-center">
+        <div className="text-center lg:text-left order-2 lg:order-1">
         {/* Terminal badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -136,14 +138,14 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.6 }}
-          className="flex flex-wrap items-center justify-center gap-4 mb-12"
+          className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-12"
         >
           <a href="#projects" className="btn-glow btn-primary">
             View My Work
             <ArrowDown size={18} />
           </a>
           <a
-            href="/Eminioluwa_Akinrinade_Resume.docx"
+            href="/Eminioluwa_Akinrinade_Resume.pdf"
             download
             className="btn-glow btn-outline"
           >
@@ -157,7 +159,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.75 }}
-          className="flex items-center justify-center gap-5"
+          className="flex items-center justify-center lg:justify-start gap-5"
         >
           {[
             {
@@ -207,6 +209,34 @@ export default function Hero() {
               {social.icon}
             </a>
           ))}
+        </motion.div>
+        </div>
+
+        {/* Portrait */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="order-1 lg:order-2 flex justify-center shrink-0"
+        >
+          <div
+            className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full p-[3px]"
+            style={{
+              background: "var(--accent-gradient)",
+              boxShadow: "var(--glow-purple)",
+            }}
+          >
+            <div className="relative w-full h-full rounded-full overflow-hidden bg-[var(--bg-primary)]">
+              <Image
+                src="/images/portrait.jpeg"
+                alt="Eminioluwa Akinrinade"
+                fill
+                sizes="(max-width: 640px) 224px, (max-width: 768px) 256px, 288px"
+                className="object-cover object-top"
+                priority
+              />
+            </div>
+          </div>
         </motion.div>
       </div>
 
