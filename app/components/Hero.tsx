@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Mail, ArrowDown, Download, Sparkles, Terminal, Code2, Cpu } from "lucide-react";
+import { Mail, Phone, ArrowDown, Download, Sparkles, Terminal, Code2, Cpu } from "lucide-react";
 
 const GithubIcon = ({ size = 20 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -172,6 +172,11 @@ export default function Hero() {
                   icon: <Mail size={19} />,
                   href: "mailto:eminioluwaakinrinade716@gmail.com",
                   label: "Email",
+                },
+                {
+                  icon: <Phone size={19} />,
+                  href: "tel:+2348111581159",
+                  label: "Phone: +234 811 158 1159",
                 },
               ].map((social) => (
                 <a

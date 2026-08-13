@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Mail, ArrowUp } from "lucide-react";
+import { Mail, Phone, ArrowUp } from "lucide-react";
 
 const GithubIcon = ({ size = 18 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -64,6 +64,7 @@ export default function Footer() {
               { icon: <GithubIcon size={18} />, href: "https://github.com/22emini", label: "GitHub" },
               { icon: <LinkedinIcon size={18} />, href: "https://linkedin.com/in/eminioluwa-akinrinade", label: "LinkedIn" },
               { icon: <Mail size={18} />, href: "mailto:eminioluwaakinrinade716@gmail.com", label: "Email" },
+              { icon: <Phone size={18} />, href: "tel:+2348111581159", label: "Phone: +234 811 158 1159" },
             ].map((s) => (
               <a
                 key={s.label}

@@ -5,6 +5,7 @@ import AnimatedSection from "./AnimatedSection";
 import {
   Send,
   Mail,
+  Phone,
   MapPin,
   Loader2,
   CheckCircle2,
@@ -103,6 +104,27 @@ export default function Contact() {
                       <p className="text-xs text-[var(--text-muted)] mb-0.5">Email</p>
                       <p className="text-sm font-medium break-all">
                         eminioluwaakinrinade716@gmail.com
+                      </p>
+                    </div>
+                  </a>
+
+                  <a
+                    href="tel:+2348111581159"
+                    className="flex items-center gap-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"
+                  >
+                    <div
+                      className="p-3 rounded-lg transition-all group-hover:scale-105"
+                      style={{
+                        background: "rgba(16,185,129,0.1)",
+                        color: "#10b981",
+                      }}
+                    >
+                      <Phone size={20} />
+                    </div>
+                    <div>
+                      <p className="text-xs text-[var(--text-muted)] mb-0.5">Phone</p>
+                      <p className="text-sm font-medium">
+                        +234 811 158 1159
                       </p>
                     </div>
                   </a>
