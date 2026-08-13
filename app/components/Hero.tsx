@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Mail, ArrowDown, Download } from "lucide-react";
+import { Mail, ArrowDown, Download, Sparkles, Terminal, Code2, Cpu } from "lucide-react";
 
 const GithubIcon = ({ size = 20 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -18,9 +18,10 @@ const LinkedinIcon = ({ size = 20 }: { size?: number }) => (
 );
 
 const roles = [
-  "Full-Stack Engineer",
-  "Mobile Developer",
-  "AI Solutions Builder",
+  "Full-Stack Software Engineer",
+  "React & Next.js Architect",
+  "Fintech & Web App Builder",
+  "AI Solutions Developer",
 ];
 
 export default function Hero() {
@@ -48,7 +49,7 @@ export default function Hero() {
   }, [charIndex, isDeleting, currentRole.length, roleIndex]);
 
   useEffect(() => {
-    const speed = isDeleting ? 40 : 80;
+    const speed = isDeleting ? 35 : 75;
     const timer = setTimeout(tick, speed);
     return () => clearTimeout(timer);
   }, [tick, isDeleting]);
@@ -58,10 +59,10 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center px-6 pt-20"
+      className="relative min-h-[92vh] flex items-center justify-center px-6 pt-24 pb-16 overflow-hidden"
     >
-      {/* Animated background */}
-      <div className="mesh-gradient" />
+      {/* Ambient background glows */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-cyan-500/10 via-blue-600/10 to-purple-600/10 blur-[130px] rounded-full pointer-events-none" />
 
       {/* Floating particles */}
       {[...Array(6)].map((_, i) => (
@@ -79,164 +80,181 @@ export default function Hero() {
         />
       ))}
 
-      <div className="relative z-10 w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 lg:gap-16 items-center">
+      <div className="relative z-10 w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-14 items-center">
+        {/* Left Column Text */}
         <div className="text-center lg:text-left order-2 lg:order-1">
-        {/* Terminal badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-mono mb-8"
-          style={{
-            background: "rgba(255,255,255,0.04)",
-            border: "1px solid rgba(255,255,255,0.08)",
-            color: "var(--text-secondary)",
-          }}
-        >
-          <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-          Available for opportunities
-        </motion.div>
-
-        {/* Name */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-tight mb-4"
-        >
-          Hi, I&apos;m{" "}
-          <span className="gradient-text">Eminioluwa</span>
-        </motion.h1>
-
-        {/* Typewriter */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="text-xl sm:text-2xl md:text-3xl font-semibold mb-6 min-h-[2.5rem]"
-          style={{ color: "var(--text-secondary)" }}
-        >
-          <span className="font-mono text-[var(--accent-blue)]">&gt; </span>
-          {displayText}
-          <span className="cursor-blink" />
-        </motion.div>
-
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.45 }}
-          className="text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
-          style={{ color: "var(--text-muted)" }}
-        >
-          Building scalable web &amp; mobile applications from Lagos to the
-          world.
-        </motion.p>
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.6 }}
-          className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-12"
-        >
-          <a href="#projects" className="btn-glow btn-primary">
-            View My Work
-            <ArrowDown size={18} />
-          </a>
-          <a
-            href="/Eminioluwa_Akinrinade_Resume.pdf"
-            download
-            className="btn-glow btn-outline"
+          {/* Terminal badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-xs font-mono mb-6 bg-white/[0.04] border border-cyan-500/20 shadow-[0_0_20px_rgba(6,182,212,0.15)] backdrop-blur-md"
           >
-            <Download size={18} />
-            Download Resume
-          </a>
-        </motion.div>
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#34d399]" />
+            <span className="text-[var(--text-secondary)]">Available for high-impact roles &amp; builds</span>
+          </motion.div>
 
-        {/* Social Icons */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.75 }}
-          className="flex items-center justify-center lg:justify-start gap-5"
-        >
-          {[
-            {
-              icon: <GithubIcon size={20} />,
-              href: "https://github.com/22emini",
-              label: "GitHub",
-            },
-            {
-              icon: <LinkedinIcon size={20} />,
-              href: "https://linkedin.com/in/eminioluwa-akinrinade",
-              label: "LinkedIn",
-            },
-            {
-              icon: <Mail size={20} />,
-              href: "mailto:eminioluwaakinrinade716@gmail.com",
-              label: "Email",
-            },
-          ].map((social) => (
-            <a
-              key={social.label}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={social.label}
-              className="p-3 rounded-full transition-all duration-300 hover:scale-110"
-              style={{
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                color: "var(--text-secondary)",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor =
-                  "rgba(139,92,246,0.3)";
-                (e.currentTarget as HTMLElement).style.color =
-                  "var(--text-primary)";
-                (e.currentTarget as HTMLElement).style.boxShadow =
-                  "var(--glow-purple)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor =
-                  "rgba(255,255,255,0.08)";
-                (e.currentTarget as HTMLElement).style.color =
-                  "var(--text-secondary)";
-                (e.currentTarget as HTMLElement).style.boxShadow = "none";
-              }}
-            >
-              {social.icon}
+          {/* Name */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-4"
+          >
+            Hi, I&apos;m{" "}
+            <span className="gradient-text">Eminioluwa</span>
+          </motion.h1>
+
+          {/* Typewriter */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="text-xl sm:text-2xl md:text-3xl font-semibold mb-6 min-h-[2.5rem] flex items-center justify-center lg:justify-start"
+            style={{ color: "var(--text-secondary)" }}
+          >
+            <span className="font-mono text-cyan-400 mr-2">&gt;</span>
+            <span className="text-white font-mono">{displayText}</span>
+            <span className="cursor-blink bg-cyan-400" />
+          </motion.div>
+
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.45 }}
+            className="text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed text-[var(--text-secondary)]"
+          >
+            Engineering resilient, scalable web architectures, high-performance fintech platforms, and AI-augmented applications from Lagos to global production environments.
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.6 }}
+            className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-10"
+          >
+            <a href="#projects" className="btn-glow btn-primary">
+              <Sparkles size={17} />
+              Explore Projects
             </a>
-          ))}
-        </motion.div>
+            <a
+              href="/Eminioluwa_Akinrinade_Resume.pdf"
+              download
+              className="btn-glow btn-outline"
+            >
+              <Download size={17} />
+              Download CV
+            </a>
+          </motion.div>
+
+          {/* Quick Metrics & Social Icons */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.75 }}
+            className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 pt-4 border-t border-white/[0.06]"
+          >
+            <div className="flex items-center gap-3">
+              {[
+                {
+                  icon: <GithubIcon size={19} />,
+                  href: "https://github.com/22emini",
+                  label: "GitHub",
+                },
+                {
+                  icon: <LinkedinIcon size={19} />,
+                  href: "https://linkedin.com/in/eminioluwa-akinrinade",
+                  label: "LinkedIn",
+                },
+                {
+                  icon: <Mail size={19} />,
+                  href: "mailto:eminioluwaakinrinade716@gmail.com",
+                  label: "Email",
+                },
+              ].map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="p-2.5 rounded-xl transition-all duration-300 hover:scale-110 bg-white/[0.04] border border-white/[0.08] text-[var(--text-secondary)] hover:text-cyan-400 hover:border-cyan-500/40 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)]"
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+
+            <div className="hidden sm:block h-6 w-[1px] bg-white/[0.1]" />
+
+            <div className="flex items-center gap-4 text-xs font-mono text-[var(--text-muted)]">
+              <span>🚀 500K+ Users Impacted</span>
+              <span>⚡ Next.js 15 &amp; Node</span>
+            </div>
+          </motion.div>
         </div>
 
-        {/* Portrait */}
+        {/* Right Column Portrait & Floating Badges */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="order-1 lg:order-2 flex justify-center shrink-0"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="order-1 lg:order-2 flex justify-center shrink-0 relative"
         >
-          <div
-            className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full p-[3px]"
-            style={{
-              background: "var(--accent-gradient)",
-              boxShadow: "var(--glow-purple)",
-            }}
-          >
-            <div className="relative w-full h-full rounded-full overflow-hidden bg-[var(--bg-primary)]">
+          {/* Glowing Aura */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/30 via-blue-600/30 to-purple-600/30 blur-3xl rounded-full scale-110 opacity-70 animate-pulse" />
+
+          {/* Portrait Container */}
+          <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full p-[3px] bg-gradient-to-tr from-cyan-400 via-blue-500 to-purple-600 shadow-[0_0_50px_rgba(6,182,212,0.35)]">
+            <div className="relative w-full h-full rounded-full overflow-hidden bg-[#070a13] border-4 border-[#070a13]">
               <Image
                 src="/images/portrait.jpeg"
                 alt="Eminioluwa Akinrinade"
                 fill
-                sizes="(max-width: 640px) 224px, (max-width: 768px) 256px, 288px"
+                sizes="(max-width: 640px) 256px, (max-width: 768px) 288px, 320px"
                 className="object-cover object-top"
                 priority
               />
             </div>
           </div>
+
+          {/* Floating Badge 1: 3D Logo Brand */}
+          <motion.div
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -top-3 -right-2 sm:right-2 p-2 rounded-2xl bg-[#0d1222]/90 border border-cyan-500/40 backdrop-blur-xl shadow-[0_8px_25px_rgba(6,182,212,0.35)] flex items-center gap-2.5 z-20"
+          >
+            <div className="w-8 h-8 rounded-xl p-1 bg-white/[0.06] flex items-center justify-center">
+              <Image
+                src="/images/logo.png"
+                alt="Eminioluwa"
+                width={28}
+                height={28}
+                className="object-contain"
+              />
+            </div>
+            <div className="pr-2">
+              <p className="text-[11px] font-bold text-white leading-tight">Full-Stack</p>
+              <p className="text-[9px] font-mono text-cyan-400">Production Ready</p>
+            </div>
+          </motion.div>
+
+          {/* Floating Badge 2: AI & Next.js */}
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute -bottom-4 -left-2 sm:left-2 px-3 py-2 rounded-2xl bg-[#0d1222]/90 border border-purple-500/40 backdrop-blur-xl shadow-[0_8px_25px_rgba(139,92,246,0.35)] flex items-center gap-2.5 z-20"
+          >
+            <div className="w-8 h-8 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center">
+              <Cpu size={16} />
+            </div>
+            <div>
+              <p className="text-[11px] font-bold text-white leading-tight">AI &amp; Fintech</p>
+              <p className="text-[9px] font-mono text-purple-300">Modern Stacks</p>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
 
@@ -245,15 +263,15 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2"
       >
         <motion.div
-          animate={{ y: [0, 10, 0] }}
+          animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="flex flex-col items-center gap-2 text-[var(--text-muted)] text-xs"
+          className="flex flex-col items-center gap-1.5 text-[var(--text-muted)] text-xs font-mono hover:text-cyan-400 transition-colors"
         >
-          <span>Scroll</span>
-          <ArrowDown size={14} />
+          <span>Explore</span>
+          <ArrowDown size={14} className="text-cyan-400" />
         </motion.div>
       </motion.div>
     </section>

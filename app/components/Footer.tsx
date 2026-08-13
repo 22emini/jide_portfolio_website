@@ -1,6 +1,7 @@
 "use client";
 
-import { Mail, Heart } from "lucide-react";
+import Image from "next/image";
+import { Mail, ArrowUp } from "lucide-react";
 
 const GithubIcon = ({ size = 18 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -17,25 +18,51 @@ const LinkedinIcon = ({ size = 18 }: { size?: number }) => (
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer
-      className="relative py-12 px-6"
-      style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
+      className="relative py-14 px-6 bg-[#05070e] border-t border-white/[0.06]"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Logo */}
-          <a href="#" className="text-lg font-bold tracking-tight">
-            <span className="gradient-text">&lt;</span>
-            Emini
-            <span className="gradient-text">/&gt;</span>
-          </a>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-white/[0.05]">
+          {/* Logo & Info */}
+          <div className="flex items-center gap-3.5">
+            <div className="w-10 h-10 rounded-xl overflow-hidden p-1.5 bg-white/[0.05] border border-cyan-500/30 flex items-center justify-center shadow-[0_0_15px_rgba(6,182,212,0.25)]">
+              <Image
+                src="/images/logo.png"
+                alt="Eminioluwa Logo"
+                width={32}
+                height={32}
+                className="object-contain"
+              />
+            </div>
+            <div>
+              <p className="text-base font-bold text-white tracking-tight">
+                Eminioluwa Akinrinade
+              </p>
+              <p className="text-xs font-mono text-[var(--text-muted)]">
+                Full-Stack Software Engineer · Lagos, Nigeria
+              </p>
+            </div>
+          </div>
 
-          {/* Social Icons */}
-          <div className="flex items-center gap-4">
+          {/* Quick Nav Anchors */}
+          <div className="flex flex-wrap justify-center gap-6 text-xs sm:text-sm font-medium text-[var(--text-secondary)]">
+            <a href="#about" className="hover:text-cyan-400 transition-colors">About</a>
+            <a href="#skills" className="hover:text-cyan-400 transition-colors">Skills</a>
+            <a href="#projects" className="hover:text-cyan-400 transition-colors">Projects</a>
+            <a href="#experience" className="hover:text-cyan-400 transition-colors">Experience</a>
+            <a href="#contact" className="hover:text-cyan-400 transition-colors">Contact</a>
+          </div>
+
+          {/* Social Icons & Back to top */}
+          <div className="flex items-center gap-3">
             {[
               { icon: <GithubIcon size={18} />, href: "https://github.com/22emini", label: "GitHub" },
-              { icon: <LinkedinIcon size={18} />, href: "https://linkedin.com/in/eminioluwa-akinrinade-a544a22b8/", label: "LinkedIn" },
+              { icon: <LinkedinIcon size={18} />, href: "https://linkedin.com/in/eminioluwa-akinrinade", label: "LinkedIn" },
               { icon: <Mail size={18} />, href: "mailto:eminioluwaakinrinade716@gmail.com", label: "Email" },
             ].map((s) => (
               <a
@@ -44,21 +71,27 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="p-2.5 rounded-lg text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
-                style={{
-                  background: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(255,255,255,0.05)",
-                }}
+                className="p-2.5 rounded-xl text-[var(--text-muted)] hover:text-cyan-400 hover:border-cyan-500/30 hover:bg-white/[0.04] transition-all bg-white/[0.02] border border-white/[0.05]"
               >
                 {s.icon}
               </a>
             ))}
-          </div>
 
-          {/* Copyright */}
-          <p className="text-xs text-[var(--text-muted)] flex items-center gap-1">
-            © {currentYear} Eminioluwa Akinrinade. Built with{" "}
-            <Heart size={12} className="text-red-400" fill="currentColor" /> and Next.js
+            <button
+              onClick={scrollToTop}
+              aria-label="Scroll to top"
+              className="p-2.5 rounded-xl text-[var(--text-muted)] hover:text-white hover:bg-cyan-500/20 hover:border-cyan-500/40 border border-white/[0.05] transition-all"
+            >
+              <ArrowUp size={18} />
+            </button>
+          </div>
+        </div>
+
+        {/* Bottom row */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--text-muted)]">
+          <p>© {currentYear} Eminioluwa Akinrinade. All rights reserved.</p>
+          <p className="font-mono text-[11px] text-cyan-400/80">
+            Crafted with Next.js 15, TypeScript &amp; Tailwind CSS
           </p>
         </div>
       </div>
