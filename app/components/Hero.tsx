@@ -133,7 +133,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6 }}
-            className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-10"
+            className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 mb-10"
           >
             <a href="#projects" className="btn-glow btn-primary">
               <Sparkles size={17} />
@@ -141,11 +141,19 @@ export default function Hero() {
             </a>
             <a
               href="/Eminioluwa_Akinrinade_Resume.pdf"
-              download
+              download="Eminioluwa_Akinrinade_Resume.pdf"
               className="btn-glow btn-outline"
             >
-              <Download size={17} />
-              Download CV
+              <Download size={16} />
+              Resume
+            </a>
+            <a
+              href="/Eminioluwa_Akinrinade_CV.pdf"
+              download="Eminioluwa_Akinrinade_CV.pdf"
+              className="btn-glow btn-outline"
+            >
+              <Download size={16} />
+              CV
             </a>
           </motion.div>
 

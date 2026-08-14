@@ -45,8 +45,8 @@ export default function Education() {
                 <p className="text-[var(--accent-blue)] font-medium text-sm">
                   Babcock University, Ilishan-Remo, Nigeria
                 </p>
-                <p className="text-xs text-[var(--text-muted)] font-mono">
-                  Expected: July 2026
+                <p className="text-xs text-[var(--accent-cyan)] font-mono font-medium">
+                  Graduated · Class of 2026
                 </p>
 
                 <div className="flex flex-wrap gap-3 mt-4">

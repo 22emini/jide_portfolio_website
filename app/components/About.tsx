@@ -88,7 +88,7 @@ export default function About() {
           <div className="glass-card p-8 sm:p-10 max-w-4xl mx-auto mb-14 hover:border-cyan-500/30">
             <div className="flex flex-col gap-5 text-base sm:text-lg leading-relaxed text-[var(--text-secondary)]">
               <p>
-                I&apos;m a results-driven <span className="text-white font-semibold">Full-Stack Software Engineer</span> and <span className="text-cyan-400 font-semibold">CPN-registered professional</span> based in Lagos, Nigeria. Currently completing my B.Sc. in Computer Software Engineering at <span className="text-white font-semibold">Babcock University</span> with a <span className="gradient-text font-semibold">3.96 CGPA</span> (Dean&apos;s List), graduating in July 2026.
+                I&apos;m a results-driven <span className="text-white font-semibold">Full-Stack Software Engineer</span> and <span className="text-cyan-400 font-semibold">CPN-registered professional</span> based in Lagos, Nigeria. Graduated with a B.Sc. in Computer Software Engineering from <span className="text-white font-semibold">Babcock University</span> with a <span className="gradient-text font-semibold">3.96 CGPA</span> (Dean&apos;s List).
               </p>
               <p>
                 My expertise spans building resilient frontend experiences in <span className="text-white font-medium">React, Next.js, and TypeScript</span>, combined with robust backend APIs on <span className="text-white font-medium">Node.js, Express, and PHP</span>. Having developed platforms serving over <span className="text-cyan-400 font-semibold">500,000+ active users</span>, I focus on system reliability, clean code architecture, and AI-accelerated delivery.
