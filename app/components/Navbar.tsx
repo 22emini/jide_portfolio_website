@@ -71,12 +71,12 @@ export default function Navbar() {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
-            <div className="relative w-9 h-9 rounded-xl overflow-hidden p-1 flex items-center justify-center bg-white/[0.05] border border-cyan-500/30 group-hover:border-cyan-400 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all duration-300">
+            <div className="relative w-9 h-9 rounded-xl overflow-hidden p-1.5 flex items-center justify-center bg-white/[0.05] border border-cyan-500/30 group-hover:border-cyan-400 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all duration-300">
               <Image
-                src="/images/logo.png"
-                alt="Eminioluwa Logo"
-                width={32}
-                height={32}
+                src="/images/logo-icon.png"
+                alt="Emini.Code Logo"
+                width={28}
+                height={28}
                 className="object-contain transform group-hover:scale-110 transition-transform duration-300"
                 priority
               />

@@ -239,17 +239,17 @@ export default function Hero() {
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             className="absolute -top-3 -right-2 sm:right-2 p-2 rounded-2xl bg-[#0d1222]/90 border border-cyan-500/40 backdrop-blur-xl shadow-[0_8px_25px_rgba(6,182,212,0.35)] flex items-center gap-2.5 z-20"
           >
-            <div className="w-8 h-8 rounded-xl p-1 bg-white/[0.06] flex items-center justify-center">
+            <div className="w-8 h-8 rounded-xl p-1.5 bg-white/[0.06] flex items-center justify-center">
               <Image
-                src="/images/logo.png"
-                alt="Eminioluwa"
-                width={28}
-                height={28}
+                src="/images/logo-icon.png"
+                alt="Emini.Code"
+                width={24}
+                height={24}
                 className="object-contain"
               />
             </div>
             <div className="pr-2">
-              <p className="text-[11px] font-bold text-white leading-tight">Full-Stack</p>
+              <p className="text-[11px] font-bold text-white leading-tight">Emini.Code</p>
               <p className="text-[9px] font-mono text-cyan-400">Production Ready</p>
             </div>
           </motion.div>

@@ -30,12 +30,12 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-white/[0.05]">
           {/* Logo & Info */}
           <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-xl overflow-hidden p-1.5 bg-white/[0.05] border border-cyan-500/30 flex items-center justify-center shadow-[0_0_15px_rgba(6,182,212,0.25)]">
+            <div className="w-10 h-10 rounded-xl overflow-hidden p-2 bg-white/[0.05] border border-cyan-500/30 flex items-center justify-center shadow-[0_0_15px_rgba(6,182,212,0.25)]">
               <Image
-                src="/images/logo.png"
-                alt="Eminioluwa Logo"
-                width={32}
-                height={32}
+                src="/images/logo-icon.png"
+                alt="Emini.Code Logo"
+                width={28}
+                height={28}
                 className="object-contain"
               />
             </div>
