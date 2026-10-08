@@ -9,6 +9,7 @@ import {
   Cloud,
   BrainCircuit,
   Wrench,
+  Bug,
 } from "lucide-react";
 
 const skillGroups = [
@@ -49,10 +50,16 @@ const skillGroups = [
     skills: ["Google Gemini API", "Claude 3.7 API", "OpenAI APIs", "Socket.IO", "Cursor IDE", "GitHub Copilot", "Prompt Engineering"],
   },
   {
+    title: "QA & Software Testing",
+    icon: <Bug size={20} />,
+    color: "#f43f5e",
+    skills: ["Unit & Integration Testing", "xUnit / Moq", "Jest", "Postman API Testing", "Test Case Design", "Bug Reporting", "Regression Testing", "Software Quality Assurance"],
+  },
+  {
     title: "Workflow & Security",
     icon: <Wrench size={20} />,
     color: "#94a3b8",
-    skills: ["Agile/Scrum", "Jest Testing", "Jira", "API Security", "PCI-DSS Compliance (basics)"],
+    skills: ["Agile/Scrum", "Jira", "API Security", "PCI-DSS Compliance (basics)"],
   },
 ];
 

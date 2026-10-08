@@ -90,9 +90,30 @@ export default function Education() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Registered Member — Computer Professionals of Nigeria (CPN)",
-                    status: "Active",
+                    title: "GMCPN — Computer Professionals Registration Council of Nigeria (CPN)",
+                    detail: "Credential ID: GM/003695/2026",
+                    status: "Jul 2026",
                     statusColor: "#10b981",
+                  },
+                  {
+                    title: "Introduction to JavaScript — SoloLearn",
+                    detail: "Credential ID: CC-4FMTNPCT",
+                    link: "https://www.sololearn.com/certificates/CC-4FMTNPCT",
+                    status: "Aug 2026",
+                    statusColor: "#3b82f6",
+                  },
+                  {
+                    title: "Prompt Engineering — SoloLearn",
+                    detail: "Credential ID: CC-E62FC9XX",
+                    link: "https://www.sololearn.com/certificates/CC-E62FC9XX",
+                    status: "Aug 2026",
+                    statusColor: "#3b82f6",
+                  },
+                  {
+                    title: "Certificate of Completion — New Horizons (A+ Hardware & Operating Client Systems)",
+                    detail: "Credential ID: 0135931",
+                    status: "Jul 2026",
+                    statusColor: "#06b6d4",
                   },
                   {
                     title: "Machine Learning for Beginners — SoloLearn",
@@ -114,7 +135,7 @@ export default function Education() {
                     status: "Growing",
                     statusColor: "#8b5cf6",
                   },
-                ].map((cert) => (
+                ].map((cert: { title: string; detail?: string; link?: string; status: string; statusColor: string }) => (
                   <div
                     key={cert.title}
                     className="flex items-start justify-between gap-3 pb-4"
@@ -122,9 +143,29 @@ export default function Education() {
                       borderBottom: "1px solid rgba(255,255,255,0.05)",
                     }}
                   >
-                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                      {cert.title}
-                    </p>
+                    <div>
+                      <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                        {cert.title}
+                      </p>
+                      {cert.detail && (
+                        <p className="text-xs font-mono text-[var(--text-muted,#64748b)] mt-1">
+                          {cert.detail}
+                          {cert.link && (
+                            <>
+                              {" · "}
+                              <a
+                                href={cert.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-cyan-400 hover:underline"
+                              >
+                                Verify
+                              </a>
+                            </>
+                          )}
+                        </p>
+                      )}
+                    </div>
                     <span
                       className="text-xs font-medium px-2.5 py-1 rounded-full whitespace-nowrap shrink-0"
                       style={{
