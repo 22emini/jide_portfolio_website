@@ -54,6 +54,8 @@ const projects: Project[] = [
       "Full-stack, real-time collaborative whiteboard featuring an infinite canvas, live multi-user cursors, sticky notes, diagram shapes, Jitsi video conferencing, and natural-language AI generation powered by Google Gemini (flowcharts, brainstorming, and data-to-charts).",
     gradient: "from-cyan-500/20 to-blue-500/20",
     accentColor: "#06b6d4",
+    image: "/images/whiteboard.png",
+    live: "https://ai-powered-whiteboard-application.vercel.app/",
     github: "https://github.com/22emini/AI-Powered-Whiteboard-Application",
   },
   {
