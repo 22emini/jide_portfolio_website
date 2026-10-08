@@ -22,7 +22,7 @@ const skillGroups = [
     title: "Backend & APIs",
     icon: <Server size={20} />,
     color: "#8b5cf6",
-    skills: ["Node.js", "Express.js", "RESTful APIs", "GraphQL", "PHP", "Laravel", "Django", "FastAPI"],
+    skills: ["C# / ASP.NET Core", "Node.js", "Express.js", "RESTful APIs", "GraphQL", "PHP", "Laravel", "FastAPI"],
   },
   {
     title: "Databases & Storage",
@@ -46,7 +46,7 @@ const skillGroups = [
     title: "AI & Modern Tooling",
     icon: <BrainCircuit size={20} />,
     color: "#ec4899",
-    skills: ["Claude 3.7 API", "OpenAI APIs", "Cursor IDE", "GitHub Copilot", "Prompt Engineering"],
+    skills: ["Google Gemini API", "Claude 3.7 API", "OpenAI APIs", "Socket.IO", "Cursor IDE", "GitHub Copilot", "Prompt Engineering"],
   },
   {
     title: "Workflow & Security",

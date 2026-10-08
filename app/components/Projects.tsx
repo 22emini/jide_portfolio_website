@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import AnimatedSection from "./AnimatedSection";
-import { ExternalLink, ShoppingCart, BrainCircuit, GraduationCap, Smartphone, Zap, CloudSun, Ticket, Sparkles, Layers } from "lucide-react";
+import { ExternalLink, ShoppingCart, BrainCircuit, GraduationCap, Smartphone, Zap, CloudSun, Ticket, Sparkles, Layers, Kanban } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const GithubIcon = ({ size = 14 }: { size?: number }) => (
@@ -43,6 +43,30 @@ const projects: Project[] = [
     live: "https://v24u.com/",
     appLink: "https://app.v24u.com/",
     github: "https://github.com/22emini/v24u-web",
+  },
+  {
+    title: "AI-Powered Real-Time Collaborative Whiteboard",
+    category: "ai",
+    badge: "Gemini AI & Realtime",
+    icon: <Layers size={24} />,
+    tech: ["Next.js", "React", "Node.js", "Express", "Socket.IO", "Prisma", "PostgreSQL", "Google Gemini AI", "Jitsi Meet"],
+    description:
+      "Full-stack, real-time collaborative whiteboard featuring an infinite canvas, live multi-user cursors, sticky notes, diagram shapes, Jitsi video conferencing, and natural-language AI generation powered by Google Gemini (flowcharts, brainstorming, and data-to-charts).",
+    gradient: "from-cyan-500/20 to-blue-500/20",
+    accentColor: "#06b6d4",
+    github: "https://github.com/22emini/AI-Powered-Whiteboard-Application",
+  },
+  {
+    title: "Ticket Tracker - Enterprise Issue Management",
+    category: "systems",
+    badge: "C# / ASP.NET Core",
+    icon: <Kanban size={24} />,
+    tech: ["C#", "ASP.NET Core", "EF Core", "PostgreSQL", "Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "JWT"],
+    description:
+      "Modern full-stack issue tracking and ticketing system engineered with an ASP.NET Core REST API, EF Core with Neon serverless PostgreSQL, and a Next.js 16 frontend. Features interactive Kanban & Grid views, JWT role-based security, live metric counters, and search & priority filtering.",
+    gradient: "from-violet-500/20 to-indigo-500/20",
+    accentColor: "#8b5cf6",
+    github: "https://github.com/22emini/Ticket-Tracker",
   },
   {
     title: "AI-Powered E-Learning Platform",
